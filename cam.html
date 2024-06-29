@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AR | Camera</title>
+    <link rel="icon" href="./assets/img/logo.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+    <style>
+      .back-btn {
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 4;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">
+      <img class="back-btn" src="./assets/img/back-button.png"
+    /></a>
+    <a-scene
+      mindar-image="imageTargetSrc: ./assets/onepiece.mind; maxTrack: 1"
+      color-space="sRGB"
+      renderer="colorManagement: true, physicallyCorrectLights"
+      vr-mode-ui="enabled: false"
+      device-orientation-permission-ui="enabled: false"
+    >
+      <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+      <a-assets>
+        <!-- WALL -->
+        <img id="wall-luffy" src="assets/img/wall-luffy.png" />
+        <img id="wall-zoro" src="assets/img/wall-zoro.png" />
+        <img id="wall-sanji" src="assets/img/wall-sanji.png" />
+        <img id="wall-reiju" src="assets/img/wall-reiju.png" />
+        <img id="wall-ace" src="assets/img/wall-ace.png" />
+        <img id="wall-nami" src="assets/img/wall-nami.png" />
+        <img id="wall-robin" src="assets/img/wall-robin.png" />
+        <img id="wall-brook" src="assets/img/wall-brook.png" />
+        <img id="wall-franky" src="assets/img/wall-franky.png" />
+        <img id="wall-shanks" src="assets/img/wall-shanks.png" />
+
+        <!-- GROUND -->
+        <img id="ground" src="assets/img/stone.png" />
+
+        <!-- MODELS -->
+        <a-asset-item
+          id="luffy"
+          src="./assets/3d-models/monkey_d_luffy_pose/scene.gltf"
+        >
+        </a-asset-item>
+        <a-asset-item
+          id="zoro"
+          src="./assets/3d-models/roronoa_zoro_pose/scene.gltf"
+        >
+        </a-asset-item>
+        <a-asset-item
+          id="sanji"
+          src="./assets/3d-models/sanji_animated/scene.gltf"
+        >
+        </a-asset-item>
+        <a-asset-item
+          id="reiju"
+          src="./assets/3d-models/reiju_animated/scene.gltf"
+        >
+        </a-asset-item>
+        <a-asset-item id="ace" src="./assets/3d-models/ace_animated/scene.gltf">
+        </a-asset-item>
+        <a-asset-item
+          id="nami"
+          src="./assets/3d-models/nami/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="robin"
+          src="./assets/3d-models/nico_robin/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="brook"
+          src="./assets/3d-models/brook/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="franky"
+          src="./assets/3d-models/franky/scene.gltf"
+        ></a-asset-item>
+        <a-asset-item
+          id="shanks"
+          src="./assets/3d-models/shanks/scene.gltf"
+        ></a-asset-item>
+      </a-assets>
+
+      <a-entity mindar-image-target="targetIndex: 0">
+        <a-gltf-model
+          src="#luffy"
+          rotation="0 60 0"
+          position="0 0 0"
+          scale="10 10 10"
+          animation-mixer
+        ></a-gltf-model>
+        <a-image
+          position="0 0.45 -1"
+          rotation="0 0 0"
+          scale="3 3 2"
+          src="#wall-luffy"
+        ></a-image>
+        <a-image
+          position="0 -1.05 0"
+          rotation="90 0 0"
+          scale="3 2 2"
+          src="#ground"
+        ></a-image>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 1">
+        <a-gltf-model
+          src="#zoro"
+          rotation="0 0 0"
+          position="0 -1.05 0"
+          scale="1 1 1"
+          animation-mixer
+        ></a-gltf-model>
+        <a-image
+          position="0 0.45 -1"
+          rotation="0 0 0"
+          scale="3 3 2"
+          src="#wall-zoro"
+        ></a-image>
+        <a-image
+          position="0 -1.05 0"
+          rotation="90 0 0"
+          scale="3 2 2"
+          src="#ground"
+        ></a-image>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 2">
+        <a-gltf-model
+          src="#sanji"
+          rotation="0 0 0"
+          position="0 -1.05 0"
+          scale="0.6 0.6 0.6"
+          animation-mixer
+        ></a-gltf-model>
+        <a-image
+          position="0 0.45 -1"
+          rotation="0 0 0"
+          scale="3 3 2"
+          src="#wall-sanji"
+        ></a-image>
+        <a-image
+          position="0 -1.05 0"
+          rotation="90 0 0"
+          scale="3 2 2"
+          src="#ground"
+        ></a-image>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 3">
+        <a-gltf-model
+          src="#reiju"
+          rotation="0 0 0"
+          position="0 -1.05 0"
+          scale="0.6 0.6 0.6"
+          animation-mixer
+        ></a-gltf-model>
+        <a-image
+          position="0 0.45 -1"
+          rotation="0 0 0"
+          scale="3 3 2"
+          src="#wall-reiju"
+        ></a-image>
+        <a-image
+          position="0 -1.05 0"
+          rotation="90 0 0"
+          scale="3 2 2"
+          src="#ground"
+        ></a-image>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 4">
+        <a-gltf-model
+          src="#ace"
+          rotation="0 0 0"
+          position="0 -1.05 0"
+          scale="0.8 0.8 0.8"
+          animation-mixer
+        ></a-gltf-model>
+        <a-image
+          position="0 0.45 -1"
+          rotation="0 0 0"
+          scale="3 3 2"
+          src="#wall-ace"
+        ></a-image>
+        <a-image
+          position="0 -1.05 0"
+          rotation="90 0 0"
+          scale="3 2 2"
+          src="#ground"
+        ></a-image>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 5">
+        <a-gltf-model
+          src="#nami"
+          rotation="0 0 0"
+          position="0 -1.05 0"
+          scale="1.2 1.2 1.2"
+          animation-mixer
+        ></a-gltf-model>
+        <a-image
+          position="0 0.45 -1"
+          rotation="0 0 0"
+          scale="3 3 2"
+          src="#wall-nami"
+        ></a-image>
+        <a-image
+          position="0 -1.05 0"
+          rotation="90 0 0"
+          scale="3 2 2"
+          src="#ground"
+        ></a-image>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 6">
+        <a-gltf-model
+          src="#robin"
+          rotation="0 0 0"
+          position="0 0.5 0"
+          scale="0.011 0.011 0.011"
+          animation-mixer
+        ></a-gltf-model>
+        <a-image
+          position="0 0.45 -1"
+          rotation="0 0 0"
+          scale="3 3 2"
+          src="#wall-robin"
+        ></a-image>
+        <a-image
+          position="0 -1.05 0"
+          rotation="90 0 0"
+          scale="3 2 2"
+          src="#ground"
+        ></a-image>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 7">
+        <a-gltf-model
+          src="#brook"
+          rotation="0 0 0"
+          position="0 -1.05 0"
+          scale="0.009 0.009 0.009"
+          animation-mixer
+        ></a-gltf-model>
+        <a-image
+          position="0 0.45 -1"
+          rotation="0 0 0"
+          scale="3 3 2"
+          src="#wall-brook"
+        ></a-image>
+        <a-image
+          position="0 -1.05 0"
+          rotation="90 0 0"
+          scale="3 2 2"
+          src="#ground"
+        ></a-image>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 8">
+        <a-gltf-model
+          src="#franky"
+          rotation="0 0 0"
+          position="0 -1.05 0"
+          scale="0.01 0.01 0.01"
+          animation-mixer
+        ></a-gltf-model>
+        <a-image
+          position="0 0.45 -1"
+          rotation="0 0 0"
+          scale="3 3 2"
+          src="#wall-franky"
+        ></a-image>
+        <a-image
+          position="0 -1.05 0"
+          rotation="90 0 0"
+          scale="3 2 2"
+          src="#ground"
+        ></a-image>
+      </a-entity>
+
+      <a-entity mindar-image-target="targetIndex: 9">
+        <a-gltf-model
+          src="#shanks"
+          rotation="0 0 0"
+          position="0 -1.05 0"
+          scale="1 1 1"
+          animation-mixer
+        ></a-gltf-model>
+        <a-image
+          position="0 0.45 -1"
+          rotation="0 0 0"
+          scale="3 3 2"
+          src="#wall-shanks"
+        ></a-image>
+        <a-image
+          position="0 -1.05 0"
+          rotation="90 0 0"
+          scale="3 2 2"
+          src="#ground"
+        ></a-image>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
